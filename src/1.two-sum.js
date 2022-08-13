@@ -1,5 +1,7 @@
 /**
- * @description 两个 for 循环暴力枚举
+ * @description 两数之和（两个 for 循环暴力枚举）
+ * @description 时间复杂度：O(n²)。其中 n 是数组中的元素数量。最坏情况下数组中任意两个数都要被匹配一次。
+ * @description 空间复杂度：O(1)
  * @param {number[]} nums
  * @param {number} target
  * @returns {number[]}
@@ -14,7 +16,9 @@
 // };
 
 /**
- * @description 通过 map 降低时间复杂度
+ * @description 两数之和（通过 map 降低时间复杂度）
+ * @description 时间复杂度：O(n)。其中 n 是数组中的元素数量。最坏情况下数组中任意两个数都要被匹配一次。
+ * @description 空间复杂度：O(n)。其中 n 是数组中的元素数量。主要为哈希表的开销。
  * @param {number[]} nums
  * @param {number} target
  * @returns {number[]}
