@@ -9,6 +9,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'no-plusplus': 'off',
+    'no-console': 'off',
     'consistent-return': 'off',
   }
 };
