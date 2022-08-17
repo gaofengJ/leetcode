@@ -10,6 +10,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
+    'no-param-reassign': 'off',
     'consistent-return': 'off',
   }
 };
