@@ -6,7 +6,7 @@
 /**
  * @description 最长回文子串（暴力破解）leetcode最后一个长用例过不了
  * @description 时间复杂度：O(n³)。for 循环里边判断是否为回文 O(n²)，所以时间复杂度为 O(n³)
- * @param {*string} 空间复杂度：O(1)，常数个变量
+ * @param {string} 空间复杂度：O(1)，常数个变量
  * @returns {string}
  */
 // const longestPalindrome = (s) => {
@@ -38,7 +38,7 @@ const expandLongestPalindrome = (s, left, right) => {
 /**
  * @description 最长回文子串（中心扩散法）
  * @description 时间复杂度：O(n²)。
- * @param {*string} 空间复杂度：O(1)。
+ * @param {string} 空间复杂度：O(1)。
  * @returns {string}
  */
 const longestPalindrome = (s) => {

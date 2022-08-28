@@ -3,7 +3,7 @@
  * @field 栈
  * @description 时间复杂度：O(n)，其中n是字符串的长度
  * @description 空间复杂度：O(n + ∣Σ∣)。栈中的字符数量为 O(n)，而哈希表使用的空间为 O(∣Σ∣)，相加即可得到总空间复杂度。
- * @param {*string} s
+ * @param {string} s
  * @returns boolean
  */
 const isValid = (s) => {

@@ -3,7 +3,7 @@
  * @description 不含重复的最长子串
  * @description 时间复杂度：O(n)。其中 n 是字符串的长度。左指针和右指针分别会遍历整个字符串一次。
  * @description 空间复杂度：O(|Σ|)。其中 Σ 表示字符集（即字符串中可以出现的字符），∣Σ∣ 表示字符集的大小。
- * @param {*string} s
+ * @param {string} s
  * @returns {number}
  */
 const lengthOfLongestSubstring = (s) => {

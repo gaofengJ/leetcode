@@ -18,8 +18,8 @@ function qSort(arr) {
  * @description 寻找两个有序数组的中位数（合并后排序）
  * @description 时间复杂度：O(m + n)。
  * @description 空间复杂度：O(m + n)。
- * @param {*Array} nums1
- * @param {*Array} nums2
+ * @param {Array} nums1
+ * @param {Array} nums2
  * @returns number
  */
 const findMedianSortedArrays = (nums1, nums2) => {

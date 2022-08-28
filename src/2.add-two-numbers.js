@@ -8,8 +8,8 @@ function ListNode(val, next) {
  * @field 链表
  * @description 时间复杂度：O(max(m, n))。其中 m 和 n 分别为两个链表的长度。我们要遍历两个链表的全部位置，而处理每个位置只需要 O(1) 的时间。
  * @description 空间复杂度：O(1)。注意返回值不计入空间复杂度。
- * @param {*ListNode} l1
- * @param {*ListNode} l2
+ * @param {ListNode} l1
+ * @param {ListNode} l2
  * @returns {ListNode}
  */
 const addTwoNumbers = (l1, l2) => {

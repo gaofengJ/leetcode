@@ -25,7 +25,7 @@ const mergeTwoLists = (list1, list2) => {
  * @field 链表
  * @description 时间复杂度：O（k²n）
  * @description 空间复杂度：O(1)
- * @param {*ListNode[][]} lists
+ * @param {ListNode[][]} lists
  * @returns
  */
 // const mergeKLists = (lists) => {
@@ -52,7 +52,7 @@ const merge = (lists, left, right) => {
  * @field 链表、分治
  * @description 时间复杂度：O(kn*log k)
  * @description 空间复杂度：O(logk)。递归会使用到 O(logk) 空间代价的栈空间
- * @param {*ListNode[][]} lists
+ * @param {ListNode[][]} lists
  * @returns
  */
 const mergeKLists = (lists) => {

@@ -1,7 +1,7 @@
 /**
  * 正则表达式匹配（复制粘贴一把梭）
- * @param {*} s
- * @param {*} p
+ * @param {} s
+ * @param {} p
  * @returns
  */
 const isMatch = (s, p) => {
