@@ -12,6 +12,7 @@ module.exports = {
     'no-console': 'off',
     'no-param-reassign': 'off',
     'consistent-return': 'off',
-    'no-mixed-operators': 'off'
+    'no-mixed-operators': 'off',
+    'no-continue': 'off',
   }
 };
