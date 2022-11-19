@@ -5,18 +5,19 @@ function ListNode(val) {
 
 /**
  * 环形链表
- * @field 遍历
+ * @description 时间复杂度：O(n)。其中 n 是链表中的节点数。最坏情况下我们需要遍历每个节点一次。
+ * @description 空间复杂度：O(n)。其中 n 是链表中的节点数。主要为哈希表的开销，最坏情况下我们需要将每个节点插入到哈希表中一次。
+ * @field 哈希表
  * @param {ListNode} head 
  * @returns 
  */
 const hasCycle = (head) => {
-  const arr = [];
+  const map = new Map();
   while (head) {
-    console.log(arr, head);
-    if (arr.includes(head)) {
+    if (map.has(head)) {
       return true;
     }
-    arr.push(head);
+    map.set(head, 1)
     head = head.next;
   }
   return false;
