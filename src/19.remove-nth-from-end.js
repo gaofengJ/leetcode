@@ -20,6 +20,8 @@ const getLength = (head) => {
 /**
  * @description 删除链表的倒数第n个节点
  * @field 链表
+ * @description 时间复杂度：O(n)
+ * @description 空间复杂度：O(n)
  * @param {ListNode} head
  * @param {number} n
  * @returns {ListNode}
@@ -34,3 +36,29 @@ const removeNthFromEnd = (head, n) => {
   cur.next = cur.next.next;
   return prev.next;
 };
+
+/**
+ * @description 删除链表的倒数第n个节点
+ * @field 链表
+ * @description 时间复杂度：O(n)
+ * @description 空间复杂度：O(1)
+ * @param {ListNode} head
+ * @param {number} n
+ * @returns {ListNode}
+ */
+const removeNthFromEnd = (head, n) => {
+  const prev = new ListNode(0, head);
+  let fast = head;
+  let slow = prev;
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
+  }
+  while (fast) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+  slow.next = slow.next.next;
+  return prev.next;
+}
+
+

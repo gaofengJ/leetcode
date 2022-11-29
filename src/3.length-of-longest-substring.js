@@ -24,5 +24,20 @@ const lengthOfLongestSubstring = (s) => {
   return max;
 };
 
-console.log(lengthOfLongestSubstring('abcabcbb'));
-console.log(lengthOfLongestSubstring('abba'));
+
+const lengthOfLongestSubstring = (s) => {
+  if (!s.length) return 0;
+  let tempMap = new Map();
+  let max = 0;
+  let left = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (tempMap.has(s[i])) {
+      left = Math.max(left, tempMap.get(s[i]) + 1);
+    }
+    tempMap.set(s[i], i);
+    max = Math.max(max, i - left + 1);
+  }
+  return max;
+}
+
+abcdabc
