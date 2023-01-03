@@ -14,5 +14,6 @@ module.exports = {
     'consistent-return': 'off',
     'no-mixed-operators': 'off',
     'no-continue': 'off',
+    'prefer-destructuring': 'off',
   }
 };

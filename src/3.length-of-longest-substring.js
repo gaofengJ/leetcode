@@ -32,7 +32,7 @@ const lengthOfLongestSubstring = (s) => {
   let left = 0;
   for (let i = 0; i < s.length; i++) {
     if (tempMap.has(s[i])) {
-      left = Math.max(left, tempMap.get(s[i]) + 1);
+      left = Math.max(left, tempMap.get(s[i]) + 1); // 确保left的右侧无重复
     }
     tempMap.set(s[i], i);
     max = Math.max(max, i - left + 1);
@@ -40,4 +40,4 @@ const lengthOfLongestSubstring = (s) => {
   return max;
 }
 
-abcdabc
+abcabcdd
