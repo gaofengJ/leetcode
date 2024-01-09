@@ -1,8 +1,8 @@
 /**
  * @description 合并两个有序数组
  * @field 数组，逆向双指针
- * @description 时间复杂度：O(m + n)。指针移动单调递减，最多移动 m+n 次，因此时间复杂度为 O(m+n)。
- * @description 空间复杂度：O(1)。直接对数组nums1原地修改，不需要额外空间。
+ * @description 时间复杂度：O(m + n)。指针移动单调递减，最多移动 m+n 次，因此时间复杂度为 O(m+n)
+ * @description 空间复杂度：O(1)。直接对数组nums1原地修改，不需要额外空间
  * @param {number[]} nums1
  * @param {number} m
  * @param {number[]} nums2
