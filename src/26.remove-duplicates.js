@@ -7,18 +7,16 @@
  * @returns
  */
 const removeDuplicates = (nums) => {
-  const len = nums.length;
   let left = 0;
   let right = 1;
+  const len = nums.length;
   while (right < len) {
     if (nums[left] === nums[right]) {
-      right += 1;
+      right++;
     } else {
-      if (nums[left] < nums[right]) {
-        nums[left + 1] = nums[right];
-      }
-      left += 1;
-      right += 1;
+      nums[left + 1] = nums[right];
+      left++;
+      right++;
     }
   }
   return left + 1;
