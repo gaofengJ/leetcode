@@ -1,19 +1,28 @@
+// const canJump = (nums) => {
+//   if (nums.length === 1) return true;
+//   const zeroIndexArr = [];
+//   for (let i = nums.length - 2; i >= 0; i--) {
+//     if (nums[i] === 0) {
+//       zeroIndexArr.push(i);
+//     }
+//   }
+//   if (!zeroIndexArr.length) return true;
+//   for (let i = 0; i < zeroIndexArr.length; i++) {
+//     const zeroIndex = zeroIndexArr[i];
+//     let tempBool = false;
+//     for (let j = 0; j < zeroIndex; j++) {
+//       if (j + nums[j] > zeroIndex) tempBool = true;
+//     }
+//     if (!tempBool) return false;
+//   }
+//   return true;
+// };
+
 const canJump = (nums) => {
-  if (nums.length === 1) return true;
-  const zeroIndexArr = [];
-  for (let i = nums.length - 2; i >= 0; i--) {
-    if (nums[i] === 0) {
-      zeroIndexArr.push(i);
-    }
-  }
-  if (!zeroIndexArr.length) return true;
-  for (let i = 0; i < zeroIndexArr.length; i++) {
-    const zeroIndex = zeroIndexArr[i];
-    let tempBool = false;
-    for (let j = 0; j < zeroIndex; j++) {
-      if (j + nums[j] > zeroIndex) tempBool = true;
-    }
-    if (!tempBool) return false;
+  let k = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (i > k) return false;
+    k = Math.max(k, i + nums[i]);
   }
   return true;
 };
