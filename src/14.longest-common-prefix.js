@@ -6,26 +6,44 @@
  * @param {string[]} strs
  * @returns
  */
+// const longestCommonPrefix = (strs) => {
+//   let minLen = strs[0].length;
+//   for (let i = 1; i < strs.length; i++) {
+//     minLen = Math.min(minLen, strs[i].length);
+//   }
+//   let ret = '';
+//   for (let i = 0; i < minLen; i++) {
+//     let tempBool = true;
+//     const tempStr = strs[0].slice(0, i + 1);
+//     for (let j = 0; j < strs.length; j++) {
+//       if (!strs[j].startsWith(tempStr)) tempBool = false;
+//     }
+//     if (tempBool) {
+//       ret = tempStr.length > ret.length ? tempStr : ret;
+//     }
+//   }
+//   return ret;
+// };
+
+// console.log(longestCommonPrefix(['reflower', 'flow', 'flight']));
+// console.log(longestCommonPrefix(['a']));
+// console.log(longestCommonPrefix(['flower', 'flower', 'flower', 'flower']));
+// console.log(longestCommonPrefix(['c', 'acc', 'ccc']));
+
 const longestCommonPrefix = (strs) => {
-  let minLen = strs[0].length;
+  let shortestStr = strs[0];
   for (let i = 1; i < strs.length; i++) {
-    minLen = Math.min(minLen, strs[i].length);
+    if (strs[i].length < shortestStr.length) {
+      shortestStr = strs[i];
+    }
   }
   let ret = '';
-  for (let i = 0; i < minLen; i++) {
-    let tempBool = true;
-    const tempStr = strs[0].slice(0, i + 1);
+  for (let i = 0; i < shortestStr.length; i++) {
+    const tempStr = shortestStr[i];
     for (let j = 0; j < strs.length; j++) {
-      if (!strs[j].startsWith(tempStr)) tempBool = false;
+      if (strs[j][i] !== tempStr) return ret;
     }
-    if (tempBool) {
-      ret = tempStr.length > ret.length ? tempStr : ret;
-    }
+    ret += tempStr;
   }
   return ret;
 };
-
-console.log(longestCommonPrefix(['reflower', 'flow', 'flight']));
-console.log(longestCommonPrefix(['a']));
-console.log(longestCommonPrefix(['flower', 'flower', 'flower', 'flower']));
-console.log(longestCommonPrefix(['c', 'acc', 'ccc']));
