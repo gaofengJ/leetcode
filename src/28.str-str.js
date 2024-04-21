@@ -8,16 +8,18 @@
  * @param {string} needle
  * @returns
  */
-const strStr = (haystack, needle) => {
-  if (!needle) return 0;
-  const len1 = haystack.length;
-  const len2 = needle.length;
-  for (let i = 0; i + len2 <= len1; i++) {
-    let flag = true;
-    for (let j = 0; j < len2; j++) {
-      if (haystack[i + j] !== needle[j]) flag = false;
-    }
-    if (flag) return i;
-  }
-  return -1;
-};
+// const strStr = (haystack, needle) => {
+//   if (!needle) return 0;
+//   const len1 = haystack.length;
+//   const len2 = needle.length;
+//   for (let i = 0; i + len2 <= len1; i++) {
+//     let flag = true;
+//     for (let j = 0; j < len2; j++) {
+//       if (haystack[i + j] !== needle[j]) flag = false;
+//     }
+//     if (flag) return i;
+//   }
+//   return -1;
+// };
+
+const strStr = (haystack, needle) => haystack.search(needle);
