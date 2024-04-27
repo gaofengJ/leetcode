@@ -6,38 +6,35 @@
  * @param {string} s
  * @returns {number}
  */
+// const lengthOfLongestSubstring = (s) => {
+//   if (!s.length) return 0;
+//   let max = 0; // 最大长度
+//   let left = 0; // 左指针
+//   const tempMap = {};
+//   const len = s.length;
+
+//   for (let i = 0; i < len; i++) {
+//     if (Object.prototype.hasOwnProperty.call(tempMap, s[i])) {
+//       left = Math.max(left, tempMap[s[i]] + 1);
+//     }
+//     tempMap[s[i]] = i;
+//     max = Math.max(max, i - left + 1);
+//     console.log(tempMap, max);
+//   }
+//   return max;
+// };
+
 const lengthOfLongestSubstring = (s) => {
   if (!s.length) return 0;
-  let max = 0; // 最大长度
-  let left = 0; // 左指针
-  const tempMap = {};
-  const len = s.length;
-
-  for (let i = 0; i < len; i++) {
-    if (Object.prototype.hasOwnProperty.call(tempMap, s[i])) {
-      left = Math.max(left, tempMap[s[i]] + 1);
+  let max = 0;
+  const strMap = new Map();
+  let left = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (strMap.has(s[i])) {
+      left = Math.max(left, strMap.get(s[i]) + 1);
     }
-    tempMap[s[i]] = i;
+    strMap.set(s[i], i);
     max = Math.max(max, i - left + 1);
-    console.log(tempMap, max);
   }
   return max;
 };
-
-
-const lengthOfLongestSubstring = (s) => {
-  if (!s.length) return 0;
-  let tempMap = new Map();
-  let max = 0;
-  let left = 0;
-  for (let i = 0; i < s.length; i++) {
-    if (tempMap.has(s[i])) {
-      left = Math.max(left, tempMap.get(s[i]) + 1); // 确保left的右侧无重复
-    }
-    tempMap.set(s[i], i);
-    max = Math.max(max, i - left + 1);
-  }
-  return max;
-}
-
-abcabcdd
