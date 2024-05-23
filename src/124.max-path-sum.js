@@ -1,14 +1,14 @@
 const maxPathSum = (root) => {
   let maxSum = Number.MIN_SAFE_INTEGER; // 最大路径和
 
-  const dfs = (root) => {
-    if (root == null) { // 遍历到null节点，收益0
+  const dfs = (innerRoot) => {
+    if (innerRoot == null) { // 遍历到null节点，收益0
       return 0;
     }
-    const left = dfs(root.left); // 左子树提供的最大路径和
-    const right = dfs(root.right); // 右子树提供的最大路径和
+    const left = dfs(innerRoot.left); // 左子树提供的最大路径和
+    const right = dfs(innerRoot.right); // 右子树提供的最大路径和
 
-    const innerMaxSum = left + root.val + right; // 当前子树内部的最大路径和
+    const innerMaxSum = left + innerRoot.val + right; // 当前子树内部的最大路径和
     maxSum = Math.max(maxSum, innerMaxSum); // 挑战最大纪录
 
     const outputMaxSum = root.val + Math.max(0, left, right); // 当前子树对外提供的最大和
