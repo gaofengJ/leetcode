@@ -47,6 +47,7 @@ class LRUCache {
     this.addToHead(node);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   removeFromList(node) {
     node.prev.next = node.next;
     node.next.prev = node.prev;
