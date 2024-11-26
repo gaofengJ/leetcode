@@ -1,28 +1,42 @@
 import { ListNode } from './helpers/ListNode';
 
-const sortList = (head) => {
-  if (!head) return null;
-  const pre = new ListNode(-1);
-  pre.next = head;
-  let cur = pre.next;
-  const nodeArr = [];
-  while (cur) {
-    nodeArr.push(cur);
-    cur = cur.next;
-  }
-  nodeArr.sort((a, b) => a.val - b.val);
-  console.log('nodeArr', nodeArr);
-  pre.next = nodeArr[0];
-  cur = pre.next;
-  for (let i = 1; i < nodeArr.length; i++) {
-    const tempNode = nodeArr[i];
-    if (i === nodeArr.length - 1) {
-      tempNode.next = null;
+const sortNodes = (left, right) => {
+  const dummy = new ListNode(-1); // 虚拟头节点
+  let cur = dummy;
+  while (left && right) {
+    if (left.val < right.val) {
+      cur.next = left;
+      left = left.next;
     } else {
-      tempNode.next = nodeArr[i + 1];
+      cur.next = right;
+      right = right.next;
     }
-    cur.next = tempNode;
     cur = cur.next;
   }
-  return pre.next;
+  cur.next = left || right; // 剩余部分直接接上
+  return dummy.next;
+};
+
+const sortList = (head) => {
+  if (!head || !head.next) return head; // 处理空链表或只有一个节点的情况
+
+  // 使用快慢指针找到链表中点
+  let slow = head;
+  let fast = head;
+  let prev = null;
+  while (fast && fast.next) {
+    prev = slow;
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  // 断开链表，形成左右两个子链表
+  prev.next = null;
+
+  // 递归排序左右子链表
+  const left = sortList(head);
+  const right = sortList(slow);
+
+  // 合并两个已排序的子链表
+  return sortNodes(left, right);
 };
