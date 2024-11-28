@@ -1,33 +1,7 @@
-// /**
-//  * 快排 + 减治
-//  */
-// const quickSort = (nums, k) => {
-//   const pivot = Math.floor(Math.random() * nums.length);
-//   const leftArr = [];
-//   const midArr = [];
-//   const rightArr = [];
-//   for (let i = 0; i < nums.length; i++) {
-//     if (nums[i] < nums[pivot]) {
-//       leftArr.push(nums[i]);
-//     } else if (nums[i] > nums[pivot]) {
-//       rightArr.push(nums[i]);
-//     } else {
-//       midArr.push(nums[i]);
-//     }
-//   }
-//   if (rightArr.length >= k) {
-//     return quickSort(rightArr, k);
-//   }
-//   if (nums.length - leftArr.length < k) {
-//     return quickSort(leftArr, k - (nums.length - leftArr.length));
-//   }
-//   return nums[pivot];
-// };
-
-// const findKthLargest = (nums, k) => quickSort([...nums], k);
-
 /**
  * 小根堆
+ * 题解：https://github.com/sisterAn/JavaScript-Algorithms/issues/60
+ * 升序：大根堆；降序：小根堆
  */
 class MinHeap {
   constructor() {
@@ -91,7 +65,7 @@ class MinHeap {
 }
 
 const findKthLargest = (nums, k) => {
-  const minHeap = new MinHeap(); // 创建一个最小堆
+  const minHeap = new MinHeap(); // 创建一个最小堆，创建堆的方式有原地建堆和插入式建堆，这里是插入式建堆
   for (let i = 0; i < nums.length; i++) {
     minHeap.push(nums[i]); // 将当前元素加到堆中
     if (minHeap.heap.length > k) { // 如果堆的大小超过了k，弹出堆顶元素
